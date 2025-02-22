@@ -1,0 +1,369 @@
+/* Import Google Font - Lobster */
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.App img {
+  border-radius: 10px;
+  width: 70%;
+  aspect-ratio: 16/9;
+}
+.main-component {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-items: center;
+  background-color: black;
+}
+
+.left-div {
+  padding: 20px;
+  text-align: center;
+
+  & h1 {
+    font-size: 3rem;
+  }
+  & h1 {
+    font-size: 42px;
+    font-weight: bold;
+    color: #ff6347;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    font-family: 'Lobster', cursive;
+  }
+  & button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: red;
+    color: white;
+  }
+}
+
+
+
+.left-div p {
+  font-size: 16px;
+  color: white; /* Ensure text is visible on dark background */
+  background: rgba(0, 0, 0, 0.6); /* Add semi-transparent background */
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.left-div button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.left-div button:hover {
+  background-color: #0056b3;
+}
+.right-div {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 1000px) {
+  .main-component {
+    grid-template-columns: 1fr;
+  }
+
+  .App img {
+    min-width: 300px;
+  }
+}
+.custom-nav {
+  background:orange !important;
+}
+
+/* Centering the form */
+.login-form {
+  width: 400px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Form Heading */
+.login-form h2 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* Form Labels */
+.login-form .form-label {
+  font-weight: bold;
+  display: block;
+  text-align: left;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+/* Input Fields */
+.login-form .form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Submit Button */
+.login-form .btn-primary {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s ease;
+}
+
+.login-form .btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Register Link */
+.login-form p {
+  margin-top: 15px;
+  color: #666;
+}
+
+.login-form a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-form a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 1000px) {
+  .login-form {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Centering the register form */
+.register-form {
+  width: 450px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Form Heading */
+.register-form h2 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* Form Labels */
+.register-form .form-label {
+  font-weight: bold;
+  display: block;
+  text-align: left;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+/* Input Fields */
+.register-form .form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Submit Button */
+.register-form .btn-primary {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s ease;
+}
+
+.register-form .btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Register Link */
+.register-form p {
+  margin-top: 15px;
+  color: #666;
+}
+
+.register-form a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.register-form a:hover {
+  text-decoration: underline;
+}
+
+/* Checkbox Alignment */
+.register-form .form-check {
+  text-align: left;
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 1000px) {
+  .register-form {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Login Page Background */
+.login-page {
+  background-color: black; /* Dark background color */
+  min-height: 100vh; /* Ensure it covers the full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.register-page {
+  background-color: black; /* Dark background color */
+  min-height: 100vh; /* Ensure it covers the full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+
+.home-page{
+  background-color: black; /* Dark background color */
+  min-height: 100vh; /* Ensure it covers the full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+
+
+
+.custom-navbar1 {
+  background-color: #ff7043; /* Change to your preferred color */
+  padding: 2px 0;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white !important;
+}
+
+.navbar {
+  background-color: #ff7043 !important; /* Ensure it overrides Bootstrap styles */
+}
+
+.form-control {
+  border-radius: 5px;
+}
+
+/* Search Input and Button */
+.search-container {
+  display: flex;
+  
+  gap: 5px; /* Reduce space between input and button */
+  margin-right: 10px; /* Reduce gap before the logout button */
+}
+
+/* Search Input */
+.search-container .form-control {
+  border-radius: 5px 0 0 5px; /* Rounded corners on the left */
+}
+
+/* Search Button */
+.search-container .btn-outline-success {
+  border-radius: 0 5px 5px 0; /* Rounded corners on the right */
+  color: white;
+  background-color: transparent;
+  border-color: white;
+}
+
+.search-container .btn-outline-success:hover {
+  background-color: white;
+  color: #ff7043;
+}
+
+.add-recipe-btn {
+  margin-left: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-recipe-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Logout Button */
+.logout-btn {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 5px; /* Reduce the gap between search and logout */
+}
+
+.logout-btn:hover {
+  background-color: #c82333;
+}
