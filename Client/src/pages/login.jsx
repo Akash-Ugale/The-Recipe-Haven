@@ -58,7 +58,7 @@ export default function Login() {
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent page reload
-
+  
     // Validate form data
     if (validate()) {
       try {
@@ -66,11 +66,16 @@ export default function Login() {
           gmail: formData.email,
           password: formData.password,
         });
-
+  
         if (response.status === 200) {
+          // Log token for verification
+          console.log("Token:", response.data.token);
+  
           // Save the token to localStorage (or sessionStorage) for persistence
           localStorage.setItem("authToken", response.data.token);
+          console.log("Stored Token:", localStorage.getItem("authToken"));
 
+  
           // Redirect to Home page after successful login
           navigate("/home");
           alert(response.data.message); // Display success message (e.g., Welcome)
@@ -83,6 +88,7 @@ export default function Login() {
       }
     }
   };
+  
 
   return (
     <div>
@@ -136,3 +142,4 @@ export default function Login() {
     </div>
   );
 }
+

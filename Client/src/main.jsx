@@ -6,6 +6,7 @@ import {createBrowserRouter, RouterProvider} from "react-router-dom"
 import Login from './pages/login.jsx'
 import Register from './pages/register.jsx'
 import Home from './pages/home.jsx'
+import ProtectedRoutes from "../components/ProtectedRoute.jsx";
 
 const router = createBrowserRouter([
   {
@@ -24,14 +25,17 @@ const router = createBrowserRouter([
   ,
   {
     path:"/home",
-    element:<Home/>
+    element: (
+      <ProtectedRoutes>
+        <Home />
+      </ProtectedRoutes>
+    )
   }
 ])
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router}>
+    <RouterProvider router={router} />
+  </StrictMode>
+);
 
-    </RouterProvider>
-  </StrictMode>,
-)

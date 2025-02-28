@@ -72,28 +72,31 @@ export default function Register() {
       
       async function createAccount() {
         try {
-          const response = await axios.post("http://localhost:5000/api/register", {name: formData.username, gmail: formData.email, password: formData.password})
-          if (response.status === 200) {
-            navigate("/login");
-            alert("User registered")
+          const response = await axios.post("http://localhost:5000/api/register", {
+            name: formData.username,
+            gmail: formData.email,
+            password: formData.password
+          });
+      
+          console.log("Response Status:", response.status); // Debugging line
+      
+          if (response.status >= 200 && response.status < 300) {
+            alert("User registered");
+            navigate("/login");  // Navigate after successful response
           }
         } catch (error) {
           if (error.response) {
-            const {status, data} = error.response;
-            const {message} = data;
-
-            if (status === 400) {
-              alert(message)
-            } else if (status === 500) {
-              alert(message)
-            }
+            const { status, data } = error.response;
+            alert(data.message || "Error occurred");
+      
           } else if (error.request) {
-            alert("Network Error", error)
+            alert("Network Error. Please check your internet connection.");
           } else {
-            alert("Axios Error", error)
+            alert("Unexpected error occurred.");
           }
         }
       }
+      
       await createAccount();
     }
   };
@@ -103,6 +106,7 @@ export default function Register() {
       <Navbar loginVisible={false} />
       <div className="register-page">
         <form className="register-form" onSubmit={handleSubmit}>
+          
           <h1>Register</h1>
           <p>Enter the following information to create an account</p>
 
@@ -154,7 +158,7 @@ export default function Register() {
             {errors.password && <div className="text-danger">{errors.password}</div>}
           </div>
 
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="btn btn-primary" >
             Submit
           </button>
 

@@ -99,6 +99,18 @@
 }
 
 /* Centering the form */
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5f5f5;
+}
+* {
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
 .login-form {
   width: 400px;
   background: #ffffff;
@@ -107,11 +119,10 @@
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
   margin: auto;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;  /* Changed from absolute to relative */
+  animation: none;  /* Disable any unintended animations */
 }
+
 
 /* Form Heading */
 .login-form h2 {
@@ -192,6 +203,10 @@
   transform: translate(-50%, -50%);
 }
 
+.register-form h1 {
+  margin-bottom: 15px;
+  color: #333;
+}
 /* Form Heading */
 .register-form h2 {
   margin-bottom: 15px;
@@ -293,10 +308,14 @@
 
 
 
-
 .custom-navbar1 {
-  background-color: #ff7043; /* Change to your preferred color */
-  padding: 2px 0;
+  position: fixed; /* Keep navbar at the top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Ensure navbar stays above content */
+  background-color: #ff7043;
+  padding: 5px 0;
 }
 
 .navbar-brand {
@@ -306,64 +325,59 @@
 }
 
 .navbar {
-  background-color: #ff7043 !important; /* Ensure it overrides Bootstrap styles */
+  background-color: #ff7043 !important; /* Override Bootstrap */
 }
 
-.form-control {
-  border-radius: 5px;
-}
-
-/* Search Input and Button */
-.search-container {
+.container-fluid {
   display: flex;
-  
-  gap: 5px; /* Reduce space between input and button */
-  margin-right: 10px; /* Reduce gap before the logout button */
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px; /* Adjust padding for better spacing */
 }
 
-/* Search Input */
-.search-container .form-control {
-  border-radius: 5px 0 0 5px; /* Rounded corners on the left */
+/* 🆕 Buttons Group - Align Left */
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Reduce gap between buttons */
+  margin-left: auto; /* Move buttons to the left */
 }
 
-/* Search Button */
-.search-container .btn-outline-success {
-  border-radius: 0 5px 5px 0; /* Rounded corners on the right */
-  color: white;
-  background-color: transparent;
-  border-color: white;
-}
-
-.search-container .btn-outline-success:hover {
-  background-color: white;
-  color: #ff7043;
-}
-
-.add-recipe-btn {
-  margin-left: 10px;
+/* Button Styles */
+.add-recipe-btn,
+.saved-recipe-btn,
+.logout-btn {
   background-color: #007bff;
   color: white;
   border: none;
-  padding: 8px 12px;
+  padding: 5px 10px; /* Reduce padding for compact buttons */
   border-radius: 5px;
   cursor: pointer;
+  font-size: 14px;
 }
 
+/* Individual Button Colors */
+.saved-recipe-btn {
+  background-color: #ffc107;
+}
+
+.logout-btn {
+  background-color: #dc3545;
+}
+
+/* Hover Effects */
 .add-recipe-btn:hover {
   background-color: #0056b3;
 }
 
-/* Logout Button */
-.logout-btn {
-  background-color: #dc3545;
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-left: 5px; /* Reduce the gap between search and logout */
+.saved-recipe-btn:hover {
+  background-color: #e0a800;
 }
 
 .logout-btn:hover {
   background-color: #c82333;
 }
+
+
+
+
